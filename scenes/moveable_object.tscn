@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cysndgi7mhpmj"]
+
+[ext_resource type="Texture2D" uid="uid://b25rajbpjqur1" path="res://icon.svg" id="1_fygij"]
+[ext_resource type="Script" uid="uid://dgylhrd21wm6k" path="res://scripts/moveable_object.gd" id="1_sbsyn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sbsyn"]
+
+[node name="MoveableObject" type="Node2D" unique_id=15126057]
+script = ExtResource("1_sbsyn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1466093038]
+position = Vector2(0, 4)
+scale = Vector2(0.15624999, 0.15624999)
+texture = ExtResource("1_fygij")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=178096468]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1794942075]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_sbsyn")
