@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dcdkjmu3gkqip"]
+
+[ext_resource type="Script" uid="uid://dso2oap3c0dt8" path="res://scripts/scene_change.gd" id="1_jbwox"]
+
+[node name="Scene0_FrontPorch" type="Node2D" unique_id=1516364441]
+script = ExtResource("1_jbwox")
+
+[node name="Frontdoor" type="Button" parent="." unique_id=837621414]
+offset_left = 132.0
+offset_top = 52.0
+offset_right = 182.0
+offset_bottom = 122.0
+
+[connection signal="pressed" from="Frontdoor" to="." method="change_scene" binds= [1]]

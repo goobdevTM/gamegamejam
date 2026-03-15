@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c1y1yc4ss58bw"]
+
+[ext_resource type="Texture2D" uid="uid://ddhpr5gafo6nb" path="res://textures/thievin titlescreen.png" id="1_6d6rd"]
+[ext_resource type="AudioStream" uid="uid://chpihhudnu3k7" path="res://Audio/Music/thievin'.ogg" id="2_3jj3l"]
+[ext_resource type="Texture2D" uid="uid://borahpb0oo4g3" path="res://textures/titlescreen-door.png" id="3_tt55a"]
+[ext_resource type="PackedScene" uid="uid://cysndgi7mhpmj" path="res://scenes/moveable_object.tscn" id="4_vhbaf"]
+[ext_resource type="PackedScene" uid="uid://dkgqwt4ame7tv" path="res://scenes/cursor.tscn" id="5_v6ms7"]
+
+[node name="Titlescreen" type="Control" unique_id=1937296960]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ThievinCover" type="Sprite2D" parent="." unique_id=1237890383]
+texture = ExtResource("1_6d6rd")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=926089535]
+stream = ExtResource("2_3jj3l")
+autoplay = true
+
+[node name="TitlescreenDoor" type="Sprite2D" parent="." unique_id=53476322]
+texture = ExtResource("3_tt55a")
+
+[node name="Level" type="Node2D" parent="." unique_id=1311059526]
+
+[node name="MoveableObject" parent="Level" unique_id=15126057 instance=ExtResource("4_vhbaf")]
+position = Vector2(-60, 22)
+collision_offset = Vector2(0, 4)
+slide = true
+
+[node name="Cursor" parent="." unique_id=2081805916 instance=ExtResource("5_v6ms7")]
+position = Vector2(160, 80)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=142513788]
