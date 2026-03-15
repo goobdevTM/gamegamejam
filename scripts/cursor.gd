@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 			DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 			if main_object.slide:
 				main_object.do_slide()
+			if main_object.has_gravity:
+				main_object.do_gravitating()
 		if Input.is_action_pressed("click"):
 			var old_pos : Vector2 = main_object.position
 			main_object.position = position - offset
@@ -33,6 +35,8 @@ func _process(delta: float) -> void:
 			position -= main_object.position - clamp_pos
 			main_object.position = position - offset
 			main_object.velocity = main_object.position - old_pos
+			main_object.has_gravity = true
+			main_object.y_vel = 0
 			if not sprite.animation == "finger_drag":
 				sprite.play("finger_drag")
 		elif not sprite.animation == "finger":

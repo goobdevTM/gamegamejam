@@ -88,7 +88,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
-size = Vector2(1, 1)
+size = Vector2(2, 2)
 
 [node name="Game" type="Node2D" unique_id=1539135724]
 
@@ -116,7 +116,7 @@ animation = &"arrow"
 collision_mask = 254
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor/Area2D" unique_id=1750847277]
-position = Vector2(-8, -8)
+position = Vector2(-7, -7)
 shape = SubResource("RectangleShape2D_ca42v")
 
 [connection signal="area_entered" from="Cursor/Area2D" to="Cursor" method="_on_area_entered"]
